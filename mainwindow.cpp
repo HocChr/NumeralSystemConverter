@@ -9,7 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->lineEdit, SIGNAL(textChanged(const QString &)), this, SLOT(onEditBinar()));
+    connect(ui->editBinar  , SIGNAL(textChanged(const QString &)), this, SLOT(onEditBinar()));
+    connect(ui->editDecimal, SIGNAL(textChanged(const QString &)), this, SLOT(onEditDecimal()));
+    connect(ui->editHex    , SIGNAL(textChanged(const QString &)), this, SLOT(onEditHex()));
 }
 
 MainWindow::~MainWindow()
@@ -19,5 +21,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::onEditBinar()
 {
-    qDebug() << "Hallöle";
+    qDebug() << "onEditBinar";
+}
+
+void MainWindow::onEditDecimal()
+{
+    qDebug() << "onEditDecimal";
+}
+
+void MainWindow::onEditHex()
+{
+    qDebug() << "onEditHex";
 }

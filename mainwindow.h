@@ -17,6 +17,8 @@ public:
 
  private slots:
     void onEditBinar();
+    void onEditDecimal();
+    void onEditHex();
 
 
 
