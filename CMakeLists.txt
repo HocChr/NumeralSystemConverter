@@ -1,25 +1,30 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 
-project(NumeralSystemConverter)
+project(NumeralSystemConverter LANGUAGES CXX)
 
-# Find includes in corresponding build directories
+# find Qt5 and required components
+find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
+
+# need this to include the auto generated ui_mainwindow.h
+# file from the qt5_wrap_ui call below.
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-# Instruct CMake to run moc automatically when needed
-set(CMAKE_AUTOMOC ON)
-# Create code from a list of Qt designer ui files
-set(CMAKE_AUTOUIC ON)
 
-# Find the QtWidgets library
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+set(project_sources mainwindow.cpp main.cpp)
+set(project_headers mainwindow.h)
+set(project_ui mainwindow.ui)
 
-# Populate a CMake variable with the sources
-set(helloworld_SRCS
-    mainwindow.ui
-    mainwindow.cpp
-    main.cpp
-)
+# wrap the ui file to a c++ header
+qt5_wrap_ui(ui_wrap ${project_ui})
+qt5_wrap_cpp(moc_sources ${project_headers})
 
-# Tell CMake to create the helloworld executable
-add_executable(helloworld ${helloworld_SRCS})
-# Use the Widgets module from Qt 5
-target_link_libraries(helloworld Qt5::Widgets)
+add_executable(converter
+    ${project_sources}
+    ${project_headers}
+    ${ui_wrap}
+    ${moc_sources})
+
+target_link_libraries(converter
+    PUBLIC
+    Qt5::Core
+    Qt5::Gui
+    Qt5::Widgets)
