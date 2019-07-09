@@ -11,7 +11,9 @@ public:
     Controller();
 
 public slots:
-    void onHexChanged();
+    void onHexChanged    (std::string &v);
+    void onDecimalChanged(std::string &v);
+    void onBinarChanged  (std::string &v);
 
 };
 

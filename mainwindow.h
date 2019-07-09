@@ -15,12 +15,15 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
- private slots:
+signals:
+    void binarChanged  (std::string& value);
+    void decimalChanged(std::string& value);
+    void hexChanged    (std::string& value);
+
+private slots:
     void onEditBinar();
     void onEditDecimal();
     void onEditHex();
-
-
 
 private:
     Ui::MainWindow *ui;

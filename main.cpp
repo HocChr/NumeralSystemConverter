@@ -3,9 +3,11 @@
 #include <QApplication>
 
 
-void setConnections(Controller& c, QWindow* w)
+void setConnections(Controller& c, MainWindow& w)
 {
-  //QObject::connect();
+    QObject::connect(&w, SIGNAL(decimalChanged(std::string&)), &c, SLOT(onDecimalChanged(std::string&)));
+    QObject::connect(&w, SIGNAL(hexChanged(std::string&)), &c, SLOT(onHexChanged(std::string&)));
+    QObject::connect(&w, SIGNAL(binarChanged(std::string&)), &c, SLOT(onBinarChanged(std::string&)));
 }
 
 int main(int argc, char *argv[])
@@ -15,6 +17,7 @@ int main(int argc, char *argv[])
 
     Controller c;
 
+    setConnections(c, w);
     w.show();
 
     return a.exec();
