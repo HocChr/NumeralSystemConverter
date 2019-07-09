@@ -20,5 +20,5 @@ void Controller::onDecimalChanged(std::string& v)
 
 void Controller::onBinarChanged(std::string &v)
 {
-    qDebug() << v.c_str();
+    qDebug() << "Binar: " << v.c_str() << "Decimal: " << binarToDecimal(v).c_str();
 }

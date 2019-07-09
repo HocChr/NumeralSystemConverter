@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iterator>
 #include <algorithm>
+#include <math.h>
 
 static bool string2int(const std::string& in, int& out)
 {
@@ -36,3 +37,33 @@ std::string decimalToBinar(const std::string &dec)
     std::copy(results.begin(), results.end(), std::ostream_iterator<int>(result, " "));
     return result.str();
 }
+
+std::string binarToDecimal(const std::string &bin)
+{
+    int i = std::stoi(bin, nullptr, 2);
+    return std::to_string(i);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
