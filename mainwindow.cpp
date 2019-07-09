@@ -55,7 +55,7 @@ QValidator::State MyIntValidator::validate(QString &s, int &) const
     bool ok;
     int d = s.toInt(&ok);
 
-    if (ok && d > bottom() && d < top()) {
+    if (ok && d >= bottom() && d <= top()) {
         return QValidator::Acceptable;
     } else {
         return QValidator::Invalid;

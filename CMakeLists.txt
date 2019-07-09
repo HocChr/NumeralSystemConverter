@@ -9,9 +9,21 @@ find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
 # file from the qt5_wrap_ui call below.
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(project_sources mainwindow.cpp main.cpp controller.cpp)
-set(project_headers mainwindow.h controller.h)
-set(project_ui mainwindow.ui)
+set(project_sources
+    mainwindow.cpp
+    main.cpp
+    controller.cpp
+    converter.cpp
+    )
+
+set(project_headers
+    mainwindow.h
+    controller.h
+    converter.h
+    )
+
+set(project_ui
+    mainwindow.ui)
 
 # wrap the ui file to a c++ header
 qt5_wrap_ui(ui_wrap ${project_ui})

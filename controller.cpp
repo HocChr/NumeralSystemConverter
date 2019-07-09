@@ -1,4 +1,5 @@
 #include "controller.h"
+#include "converter.h"
 
 #include <QDebug>
 
@@ -14,7 +15,7 @@ void Controller::onHexChanged(std::string& v)
 
 void Controller::onDecimalChanged(std::string& v)
 {
-    qDebug() << v.c_str();
+    qDebug() << "Decimal: " << v.c_str() << "Binär: " << decimalToBinar(v).c_str();
 }
 
 void Controller::onBinarChanged(std::string &v)
