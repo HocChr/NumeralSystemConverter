@@ -10,7 +10,7 @@ Controller::Controller()
 
 void Controller::onHexChanged(std::string& v)
 {
-    qDebug() << v.c_str();
+    qDebug() << "Hex: " << v.c_str() << "Decimal: "   << hexToDecimal(v).c_str();
 }
 
 void Controller::onDecimalChanged(std::string& v)

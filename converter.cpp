@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <math.h>
 
+#include <QDebug>
+
 static bool string2int(const std::string& in, int& out)
 {
     int decimal{0};
@@ -43,6 +45,24 @@ std::string binarToDecimal(const std::string &bin)
     int i = std::stoi(bin, nullptr, 2);
     return std::to_string(i);
 }
+
+std::string hexToDecimal(const std::string &hex)
+{
+    unsigned int x{0};
+    std::string tmp(hex);
+    tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
+    qDebug() << tmp.c_str();
+    try
+    {
+        x = std::stoul(tmp, nullptr, 16);
+    }
+    catch(...)
+    {
+        return "nan";
+    }
+    return std::to_string(x);
+}
+
 
 
 
