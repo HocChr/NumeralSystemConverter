@@ -10,15 +10,24 @@ Controller::Controller()
 
 void Controller::onHexChanged(std::string& v)
 {
-    qDebug() << "Hex: " << v.c_str() << "Decimal: "   << hexToDecimal(v).c_str();
+    auto decimal = hexToDecimal(v);
+    auto binar = decimalToBinar(decimal);
+    qDebug() << "Hex: " << v.c_str() << "Decimal: " << decimal.c_str();
+    qDebug() << "Hex: " << v.c_str() << "Binar: "   << binar.c_str();
 }
 
 void Controller::onDecimalChanged(std::string& v)
 {
-    qDebug() << "Decimal: " << v.c_str() << "Binär: " << decimalToBinar(v).c_str();
+    auto binar = decimalToBinar(v);
+    auto hex = decimalToHex(v);
+    qDebug() << "Decimal: " << v.c_str() << "Binär: " << binar.c_str();
+    qDebug() << "Decimal: " << v.c_str() << "Hex: "   << hex.c_str();
 }
 
 void Controller::onBinarChanged(std::string &v)
 {
-    qDebug() << "Binar: " << v.c_str() << "Decimal: " << binarToDecimal(v).c_str();
+    auto decimal = binarToDecimal(v);
+    auto hex = decimalToHex(decimal);
+    qDebug() << "Binar: " << v.c_str() << "Decimal: " << decimal.c_str();
+    qDebug() << "Binar: " << v.c_str() << "Hex: "     << hex.c_str();
 }

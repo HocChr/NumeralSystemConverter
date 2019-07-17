@@ -42,8 +42,14 @@ std::string decimalToBinar(const std::string &dec)
 
 std::string binarToDecimal(const std::string &bin)
 {
-    int i = std::stoi(bin, nullptr, 2);
-    return std::to_string(i);
+    int decimal{0};
+    try {
+        decimal = std::stoi(bin, nullptr, 2);
+
+    } catch (...) {
+        return "nan";
+    }   
+    return std::to_string(decimal);
 }
 
 std::string hexToDecimal(const std::string &hex)
@@ -61,6 +67,14 @@ std::string hexToDecimal(const std::string &hex)
         return "nan";
     }
     return std::to_string(x);
+}
+
+std::string decimalToHex(const std::string &dec)
+{
+    std::stringstream ss; int decimal;
+    if(!string2int(dec, decimal)) return std::string("nan");
+    ss<< std::hex << decimal; // int decimal_value
+    return(ss.str());
 }
 
 
