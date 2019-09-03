@@ -74,7 +74,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->editBinar  ->setValidator(new BinarValidator(0, 100, this));
     ui->editDecimal->setValidator(new MyIntValidator(0, static_cast<int>(pow(2, 24)), this));
-    ui->editHex    ->setInputMask("HH-HH-HH-HH");
+    //ui->editHex    ->setInputMask("HH-HH-HH-HH");
 
     connect(ui->editBinar  , SIGNAL(textChanged(const QString &)), this, SLOT(onEditBinar()));
     connect(ui->editDecimal, SIGNAL(textChanged(const QString &)), this, SLOT(onEditDecimal()));

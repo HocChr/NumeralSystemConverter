@@ -36,7 +36,7 @@ std::string decimalToBinar(const std::string &dec)
 
     std::stringstream result;
     std::reverse(results.begin(), results.end());
-    std::copy(results.begin(), results.end(), std::ostream_iterator<int>(result, " "));
+    std::copy(results.begin(), results.end(), std::ostream_iterator<int>(result, ""));
     return result.str();
 }
 
