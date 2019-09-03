@@ -30,6 +30,7 @@ qt5_wrap_ui(ui_wrap ${project_ui})
 qt5_wrap_cpp(moc_sources ${project_headers})
 
 add_executable(converter
+    WIN32
     ${project_sources}
     ${project_headers}
     ${ui_wrap}

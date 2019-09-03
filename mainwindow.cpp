@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include <QIntValidator>
+#include <QFile>
 #include <math.h>
 
 //--- Helper Classes --------------------------------------
@@ -69,6 +70,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Zahlenkonverter");
 
     ui->editBinar  ->setValidator(new BinarValidator(0, 100, this));
     ui->editDecimal->setValidator(new MyIntValidator(0, static_cast<int>(pow(2, 24)), this));
@@ -77,6 +79,13 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->editBinar  , SIGNAL(textChanged(const QString &)), this, SLOT(onEditBinar()));
     connect(ui->editDecimal, SIGNAL(textChanged(const QString &)), this, SLOT(onEditDecimal()));
     connect(ui->editHex    , SIGNAL(textChanged(const QString &)), this, SLOT(onEditHex()));
+
+    setMaximumSize(300, 90);
+
+    QFile File("darkorange_stylesheet.qss");
+    File.open(QFile::ReadOnly);
+    QString StyleSheet = QLatin1String(File.readAll());
+    qApp->setStyleSheet(StyleSheet);
 }
 
 MainWindow::~MainWindow()
