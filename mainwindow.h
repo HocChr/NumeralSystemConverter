@@ -25,6 +25,9 @@ private slots:
     void onEditDecimal();
     void onEditHex();
 
+public slots:
+    void onDataChanged(std::string& decimal,std::string& binar,std::string& hex);
+
 private:
     Ui::MainWindow *ui;
 };

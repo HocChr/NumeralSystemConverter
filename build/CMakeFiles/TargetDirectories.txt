@@ -1,0 +1,3 @@
+C:/Users/chochheim/Documents/Projects/NumeralSystemConverter/build/CMakeFiles/converter.dir
+C:/Users/chochheim/Documents/Projects/NumeralSystemConverter/build/CMakeFiles/edit_cache.dir
+C:/Users/chochheim/Documents/Projects/NumeralSystemConverter/build/CMakeFiles/rebuild_cache.dir

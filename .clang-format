@@ -1,0 +1,87 @@
+# =========================================================
+# formatting rules for clang-format 3.5.
+#
+# Version 1
+#
+# Documentation of all these options can be found at
+# http://llvm.org/releases/3.5.0/tools/clang/docs/ClangFormatStyleOptions.html
+# =========================================================
+---
+Language: Cpp
+
+ColumnLimit: 120
+PenaltyExcessCharacter: 100
+PenaltyBreakFirstLessLess: 80
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyBreakComment: 90
+PenaltyBreakString: 101
+PenaltyReturnTypeOnItsOwnLine: 70
+
+AlignAfterOpenBracket: AlwaysBreak
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+SpacesBeforeTrailingComments: 1
+Standard:        Cpp11
+IndentWidth:     4
+TabWidth:        4
+ContinuationIndentWidth: 4
+AccessModifierOffset: -4
+UseTab:          Never
+SpacesInParentheses: false
+SpacesInAngles:  false
+SpaceInEmptyParentheses: false
+SpacesInCStyleCastParentheses: false
+
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+
+AlignEscapedNewlinesLeft: true
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: true
+
+AlwaysBreakTemplateDeclarations: true
+AlwaysBreakBeforeMultilineStrings: true
+
+BinPackParameters: false
+ExperimentalAutoDetectBinPacking: false  # "NOTE: This is an experimental flag, that might go away or be renamed. Do not use this in config files, etc." Okay.
+
+BreakBeforeBinaryOperators: false
+
+BreakBeforeTernaryOperators: false
+BreakBeforeBraces: Allman
+BreakConstructorInitializers: BeforeComma
+
+CommentPragmas:  '^ IWYU pragma:'
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerIndentWidth: 4
+Cpp11BracedListStyle: true
+DerivePointerAlignment: false
+PointerAlignment: Right
+IndentCaseLabels: false
+IndentWrappedFunctionNames: false
+IndentFunctionDeclarationAfterType: false
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 2
+NamespaceIndentation: None
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: false
+
+SpacesInContainerLiterals: true
+SpaceBeforeAssignmentOperators: true
+ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
+SpaceBeforeParens: ControlStatements
+DisableFormat:   false
+
+# New in 3.6, unsupported in 3.5:
+# BinPackArguments: true
+# AllowShortCaseLabelsOnASingleLine: true
+# AlwaysBreakAfterDefinitionReturnType: false
+# BreakBeforeBinaryOperators: NonAssignment
+# SpacesInSquareBrackets: false
+# SpaceAfterCStyleCast: false
+
+SortIncludes: false
+
+...

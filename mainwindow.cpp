@@ -84,6 +84,21 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::onDataChanged(std::string &decimal, std::string &binar, std::string &hex)
+{
+    ui->editDecimal->blockSignals(true);
+    ui->editHex    ->blockSignals(true);
+    ui->editBinar  ->blockSignals(true);
+    
+    ui->editDecimal->setText(decimal.c_str());
+    ui->editHex    ->setText(hex.c_str());
+    ui->editBinar  ->setText(binar.c_str());
+    
+    ui->editDecimal->blockSignals(false);
+    ui->editHex    ->blockSignals(false);
+    ui->editBinar  ->blockSignals(false);
+}
+
 void MainWindow::onEditBinar()
 {
     std::string value = ui->editBinar->text().toStdString();

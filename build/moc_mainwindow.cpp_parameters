@@ -1,0 +1,6 @@
+-IC:/Users/chochheim/Documents/Projects/NumeralSystemConverter
+-IC:/Users/chochheim/Documents/Projects/NumeralSystemConverter/build
+-DWIN32
+-o
+C:/Users/chochheim/Documents/Projects/NumeralSystemConverter/build/moc_mainwindow.cpp
+C:/Users/chochheim/Documents/Projects/NumeralSystemConverter/mainwindow.h
